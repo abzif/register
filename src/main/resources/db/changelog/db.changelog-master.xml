@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+
+<databaseChangeLog  
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"  
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="create_table_REGISTER" author="lp">
+        <createTable tableName="REGISTER">
+            <column name="REG_NAME" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column  name="BALANCE" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>  
+    </changeSet>
+    
+    <changeSet id="populate_table_REGISTER" author="lp">
+        <insert tableName="REGISTER">
+            <column name="REG_NAME" value="Wallet"/>
+            <column name="BALANCE" value="1000"/>
+        </insert>
+        <insert tableName="REGISTER">
+            <column name="REG_NAME" value="Savings"/>
+            <column name="BALANCE" value="5000"/>
+        </insert>
+        <insert tableName="REGISTER">
+            <column name="REG_NAME" value="Insurance policy"/>
+            <column name="BALANCE" value="0"/>
+        </insert>
+        <insert tableName="REGISTER">
+            <column name="REG_NAME" value="Food expenses"/>
+            <column name="BALANCE" value="0"/>
+        </insert>
+    </changeSet>
+    
+</databaseChangeLog>
